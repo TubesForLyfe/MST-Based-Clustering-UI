@@ -1,0 +1,10 @@
+.App {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  max-width: 1500px;
+  background-color: #3cb9ea;
+  min-height: 750px;
+
+  font-family: 'Open Sans', sans-serif;
+}
