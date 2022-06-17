@@ -56,6 +56,5 @@ Klik button <strong>Show</strong> pada cluster yang ingin ditunjukkan
 
 ## Referensi Belajar
 
-- https://bibliografi.my.id/contoh-soal-algoritma-prim-dan-kruskal/
 - https://www.youtube.com/watch?v=00pzxH7YjYY
 - https://mherman.org/blog/dockerizing-a-react-app/
