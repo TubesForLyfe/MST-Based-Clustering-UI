@@ -9,7 +9,7 @@ MST-Based Clustering merupakan salah satu algoritma unsupervised pada machine le
 Graphical User Interface pada website MST-Based CLustering dibuat menggunakan:
 - React Typescript
 - d3 (Menampilkan bidang koordinat pada website)
-- Docker.
+- Docker
 
 ## Cara Menggunakan
 
