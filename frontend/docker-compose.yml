@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   sample:
-    container_name: MST-Based-Clustering
+    container_name: MST-Based-Clustering-UI
     build:
       context: .
       dockerfile: Dockerfile

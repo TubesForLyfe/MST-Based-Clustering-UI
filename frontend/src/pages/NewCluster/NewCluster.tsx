@@ -13,6 +13,7 @@ type Point = {
 const NewCluster = () => {
   const [CSVName, setCSVName] = useState<string | null>('');
   const [MST, setMST] = useState<Point[] | []>([]);
+  const [cutMST, setCutMST] = useState<Point[] | []>([]);
   const [amount, setAmount] = useState('');
   const svgRef = useRef<SVGSVGElement| null>(null);
 
@@ -37,6 +38,7 @@ const NewCluster = () => {
         data: data_result
     }).then((response: any) => {
         setMST(response.data);
+        setCutMST([]);
         const svg = d3.select(svgRef.current);
         svg.selectAll('*').remove();
     })
@@ -49,6 +51,13 @@ const NewCluster = () => {
         amount: amount,
         filename: CSVName
     }).then((response: any) => {
+        let j = MST.length - 1
+        let cut_result = [];
+        for (let i = 0; i < parseInt(amount) - 1; i++) {
+            cut_result[i] = MST[j];
+            j--;
+        }
+        setCutMST(cut_result);
         const w = 300;
         const h = 300;
         const svg = d3.select(svgRef.current).attr('width', w).attr('height', h).style('overflow', 'visible').style('margin-top', '50px');
@@ -86,6 +95,26 @@ const NewCluster = () => {
                 }}>Create</button>
                 <br></br>
                 <svg ref={svgRef} className="mb-5"></svg>
+                <p className='mt-4'>Langkah-langkah:</p>
+                <p>1. Minimum Spanning Tree yang terbentuk sebagai berikut.</p>
+                {MST.map((val: any, key) => {
+                    return (
+                        <div>
+                            <p>({val.point[0].x}, {val.point[0].y}) - ({val.point[1].x}, {val.point[1].y})</p>
+                        </div>
+                    )
+                })}
+                {cutMST.length !== 0 && <div>
+                    <p>2. Edge MST yang dipotong sebagai berikut.</p>
+                    {cutMST.map((val: any, key) => {
+                        return (
+                            <div>
+                                <p>({val.point[0].x}, {val.point[0].y}) - ({val.point[1].x}, {val.point[1].y})</p>
+                            </div>
+                        )
+                    })}
+                </div>
+                }
             </div>}
         </div>
       </div>
