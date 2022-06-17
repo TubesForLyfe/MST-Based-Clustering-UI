@@ -6,7 +6,10 @@ MST-Based Clustering merupakan salah satu algoritma unsupervised pada machine le
 
 ## Teknologi dan Framework
 
-Graphical User Interface pada website MST-Based CLustering dibuat dengan menggunakan React Typescript dan Docker.
+Graphical User Interface pada website MST-Based CLustering dibuat menggunakan:
+- React Typescript
+- d3 (Menampilkan bidang koordinat pada website)
+- Docker.
 
 ## Cara Menggunakan
 
